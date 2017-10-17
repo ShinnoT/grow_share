@@ -8,4 +8,5 @@ class Item < ApplicationRecord
   def self.search(query)
     where("name LIKE ?", "%#{query}%")
   end
+  has_attachments :photo
 end
