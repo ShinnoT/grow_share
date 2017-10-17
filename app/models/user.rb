@@ -5,5 +5,5 @@ class User < ApplicationRecord
          :recoverable, :rememberable, :trackable, :validatable
   has_many :items, dependent: :destroy
   has_many :bookings
-  # has_many :bookings, :through => :bookings
+  has_many :orders, through: :items, source: :bookings
 end
