@@ -1,9 +1,11 @@
 class ItemsController < ApplicationController
   def index
-    @items = if params[:something]
-      Item.find_by(name: params[:something])
+    @items = Item.all
+
+    if params[:search]
+      @items = Item.search(params[:search])
     else
-      Item.all
+      @items = Item.all
     end
   end
 
