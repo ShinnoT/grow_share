@@ -6,4 +6,25 @@
 #   movies = Movie.create([{ name: 'Star Wars' }, { name: 'Lord of the Rings' }])
 #   Character.create(name: 'Luke', movie: movies.first)
 
+Booking.destroy_all
+Item.destroy_all
+User.destroy_all
+puts 'Cleaning DB!'
 
+
+seller = User.create(email: "bobo@bobo.com", first_name:"Bo", last_name:"Bi", password: 'password') #u1
+buyer = User.create(email: "coco@coco.com", first_name:"Co", last_name:"Ci", password: 'password')
+
+bananas = Item.new(name: "banana", good_until: Date.today, category: "vegetable", quantity: 100, indicator: "kg")
+coconuts = Item.new(name: "coconut", good_until: Date.today, category: "fruit", quantity: 100, indicator: "kg")
+
+
+bananas.user = seller
+bananas.save
+coconuts.user = seller
+coconuts.save
+puts 'Creating items!'
+
+b1 = Booking.new(user: buyer, item: coconuts, date: Date.today)
+b1.save
+puts "saved booking"
