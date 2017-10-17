@@ -1,5 +1,15 @@
 class ItemsController < ApplicationController
   skip_before_action :authenticate_user!, only: [:index, :show, :search]
+  def search
+    @items = Item.all
+
+    if params[:search]
+      @items = Item.search(params[:search])
+    else
+      @items = Item.all
+    end
+  end
+
   def index
     @items = Item.all
     if params[:search]
@@ -24,16 +34,6 @@ class ItemsController < ApplicationController
       redirect_to item_path(@item)
     else
       render :new
-    end
-  end
-
-  def search
-    @items = Item.all
-
-    if params[:search]
-      @items = Item.search(params[:search])
-    else
-      @items = Item.all
     end
   end
 

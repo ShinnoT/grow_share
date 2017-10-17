@@ -1,1 +1,8 @@
 <!-- a create page for bookings (will be redirected here after buyer pressed "buy" on /items/show.html.erb -->
+
+
+<%= simple_form_for [@item, @booking] do |f| %>
+  <%= f.input :date %>
+  <%#= f.association :ingredient, as: :select %>
+  <%= f.button :submit %>
+<% end %>
