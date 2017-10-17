@@ -1,0 +1,11 @@
+<%= simple_form_for :item, method: :get do |f| %>
+  <%= f.input :search %>
+  <%= f.button :submit %>
+<% end %>
+
+<% @items.each do |item| %>
+  <p>item.name</p>
+  <p>item.category</p>
+  <p>item.quantity</p>
+  <p>item.indicator</p>
+<% end %>
