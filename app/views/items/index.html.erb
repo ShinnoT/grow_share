@@ -13,10 +13,7 @@
 <% end %>
 
 <% @items.each do |item| %>
-  <p>item.name</p>
-  <p>item.category</p>
-  <p>item.quantity</p>
-  <p>item.indicator</p>
+  <p><%= link_to item.name, item_path(item) %></p>
 <% end %>
 
   </div>

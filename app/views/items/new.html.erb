@@ -1,1 +1,9 @@
 <!-- page for seller to create new items -->
+<%= simple_form_for @item do |f| %>
+  <%= f.input :name %>
+  <%= f.input :good_until %>
+  <%= f.input :category, collection: ["vegetable", "fruit"], as: :select %>
+  <%= f.input :quantity %>
+  <%= f.input :indicator, collection: ["kg", "g"], as: :select %>
+  <%= f.button :submit %>
+<% end %>
