@@ -1,9 +1,7 @@
+
 Rails.application.routes.draw do
-  # devise_for :users
-  # root to: 'items#index'
-  # resources :items, only: [:show, :new, :create, :edit, :update, :destroy] do
-  #   resources :bookings, only: [:new, :create]
-  # end
+  mount Attachinary::Engine => "/attachinary"
+
   devise_for :users,
     controllers: { omniauth_callbacks: 'users/omniauth_callbacks' }
   root to: 'items#index'
