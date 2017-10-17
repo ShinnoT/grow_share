@@ -1,0 +1,16 @@
+<div class="container">
+
+  <div class="banner" style="background-image: linear-gradient(-225deg, rgba(0,101,168,0.6) 50%, rgba(0,36,61,0.6) 100%), url('http://res.cloudinary.com/rtm/image/upload/v1508228802/g70w04qlfus6tsgqh71i.jpg');">
+
+    <div class="banner-content">
+      <h1>Grow <%= image_tag "Logo_grow_share_short.png", {class: "img-circle", id: "logo"} %>Share</h1>
+      <%= simple_form_for :item, method: :get do |f| %>
+      <%= f.input :search, placeholder: "search fruits..."%>
+      <%= f.button :submit, "Search" %>
+      <% end %>
+      <% @items.each do |item| %>
+      <p><%= link_to item.name, item_path(index) %></p>
+      <% end %>
+    </div>
+  </div>
+</div>

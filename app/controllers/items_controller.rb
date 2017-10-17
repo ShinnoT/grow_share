@@ -1,5 +1,5 @@
 class ItemsController < ApplicationController
-  skip_before_action :authenticate_user!, only: [:index, :show]
+  skip_before_action :authenticate_user!, only: [:index, :show, :search]
   def index
     @items = Item.all
     if params[:search]
@@ -27,9 +27,19 @@ class ItemsController < ApplicationController
     end
   end
 
+  def search
+    @items = Item.all
+
+    if params[:search]
+      @items = Item.search(params[:search])
+    else
+      @items = Item.all
+    end
+  end
+
   private
 
   def item_params
-    params.require(:item).permit(:name, :good_until, :category, :quantity, :indicator)
+    params.require(:item).permit(:name, :good_until, :category, :quantity, :indicator, :photo)
   end
 end
