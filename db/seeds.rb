@@ -14,7 +14,7 @@ puts 'Cleaning DB!'
 
 
 seller = User.create(email: "bobo@bobo.com", first_name:"Bo", last_name:"Bi", password: 'password',address: "tokyo") #u1
-buyer = User.create(email: "coco@coco.com", first_name:"Co", last_name:"Ci", password: 'password',address: "tokyo")
+buyer = User.create(email: "coco@coco.com", first_name:"Co", last_name:"Ci", password: 'password',address: "osaka")
 
 bananas = Item.new(name: "banana", good_until: Date.today, category: "vegetable", quantity: 100, indicator: "kg")
 coconuts = Item.new(name: "coconut", good_until: Date.today, category: "fruit", quantity: 100, indicator: "kg")
