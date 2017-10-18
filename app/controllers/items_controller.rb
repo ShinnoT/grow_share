@@ -16,8 +16,7 @@ class ItemsController < ApplicationController
       @items = Item.where("name LIKE ?", "%#{params[:search]}%")
       # @items = Item.all.joins(:user).where.not(users: {latitude: nil}) #items of the user where longitude and latitude not nil
     else
-   @items = Item.all.joins(:user).where.not(users: {latitude: nil})
-      return
+      @items = Item.all.joins(:user).where.not(users: {latitude: nil})
     end
 
     @hash = Gmaps4rails.build_markers(@items) do |item, marker|
