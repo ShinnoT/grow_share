@@ -1,0 +1,15 @@
+<% @items.each do |item| %>
+      <div class="col-xs-12 col-sm-4">
+        <%= link_to item_path(item), :class => "card-link" do %>
+          <div class="card" style="background-image: linear-gradient(rgba(0,0,0,0.3), rgba(0,0,0,0.2)), url('https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQj2pjMwnZ4H8hrxT1x9To6GbZqlY9Km9JroOyuJgt5Tu8CE95MVg');">
+            <div class="card-category">I love it</div>
+              <div class="card-description">
+                <h2><%= link_to item.name, item_path(item) %></h2>
+                <p>Very fresh, the best</p>
+              </div>
+            <img class="card-user" src="https://kitt.lewagon.com/placeholder/users/charleseeckhout">
+            <!-- <a class="card-link" href="#" ></a> -->
+          </div>
+        <% end %>
+      </div>
+    <% end %>
