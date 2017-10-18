@@ -3,9 +3,9 @@
 <div class="banner" style="background-image: linear-gradient(-225deg, rgba(0,101,168,0.6) 0%, rgba(0,36,61,0.6) 50%)>
     <%= image_tag "background2.png" %>
       <div class="banner-content">
-        <h1>Grow Share Eat</h1>
-    <%= image_tag "logo_grow_share_long_f.png" %>
-        <p>Think global - Act local!</p>
+        <h1>Buy Local Produce from your neighbors!</h1>
+
+        <p>GrowShare brings the farmer's market to you</p>
 
 
 
@@ -32,5 +32,28 @@
   </div>
 </div>
 
-</Div>
+
+
+<div id="map" style="width: 100%; height: 600px;"></div>
+
+<% content_for(:after_js) do %>
+  <%= javascript_tag do %>
+    $(document).ready(function() {
+      var handler = Gmaps.build('Google');
+      handler.buildMap({ internal: { id: 'map' } }, function() {
+        markers = handler.addMarkers(<%= raw @hash.to_json %>);
+        handler.bounds.extendWith(markers);
+        handler.fitMapToBounds();
+        if (markers.length == 0) {
+          handler.getMap().setZoom(2);
+        } else if (markers.length == 1) {
+          handler.getMap().setZoom(14);
+        }
+      });
+    });
+  <% end %>
+<% end %>
+
+</div>
+
 

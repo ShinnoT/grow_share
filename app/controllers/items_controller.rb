@@ -11,12 +11,20 @@ class ItemsController < ApplicationController
   end
 
   def index
-    @items = Item.all
+   @items = Item.all.joins(:user).where.not(users: {latitude: nil})
     if params[:search]
       @items = Item.where("name LIKE ?", "%#{params[:search]}%")
+      # @items = Item.all.joins(:user).where.not(users: {latitude: nil}) #items of the user where longitude and latitude not nil
     else
-      @items = Item.all
+      # @items = Item.all
+      return
     end
+
+    # @hash = Gmaps4rails.build_markers(@items) do |item, marker|
+    #   marker.lat @items.latitude
+    #   marker.lng @items.longitude
+    # end
+
   end
 
   def show
@@ -43,3 +51,4 @@ class ItemsController < ApplicationController
     params.require(:item).permit(:name, :good_until, :category, :quantity, :indicator, :photo)
   end
 end
+
