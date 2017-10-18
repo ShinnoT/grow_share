@@ -1,0 +1,67 @@
+.second-container {
+  margin: 20px;
+  height: 80vh;
+  // background-image: url('http://www.woolffarming.com/img/web/background.jpg');
+  background: linear-gradient(rgba(0, 0, 0, 0.3), rgba(0, 0, 0, 0.3)), url('https://horticulture.ahdb.org.uk/sites/default/files/u2815/Cabbage.jpg');
+  background-size: cover;
+  // background-color: rgba(0, 0 , 0, 0.2);
+  text-align: center;
+  border-radius: 5px;
+  box-shadow: 3px 3px 5px rgba(0,0,0,0.5);
+  padding: 20px;
+  color: white;
+  h1 {
+    font-size: 80px;
+    font-weight: bolder;
+  }
+  h3 {
+    margin-top: 100px;
+  }
+  li {
+    font-size: 22px;
+  }
+}
+a {
+  text-decoration: none !important;
+  color: rgb(50, 50, 50);
+  font-size: 22px;
+}
+
+.flex-container {
+  height: 200px;
+  min-width: 100%;
+  display: flex;
+  flex-direction: row;
+  justify-content: space-around;
+  align-items: center;
+  margin-top: 70px;
+}
+.flex-item {
+  // height: 50px;
+  // min-width: 100px;
+  flex-grow: 2;
+  margin: 50px;
+  background: rgba(250, 250, 250, 0.9);
+  border-radius: 10px;
+  padding-bottom: 30px;
+  padding-top: 0px;
+  color: rgb(50, 50, 50);
+}
+.avvie {
+    /* This image is 687 wide by 1024 tall, similar to your aspect ratio */
+    background-image: url('https://s3.amazonaws.com/37assets/svn/1065-IMG_2529.jpg');
+
+    /* make a square container */
+    width: 150px;
+    height: 150px;
+
+    /* fill the container, preserving aspect ratio, and cropping to fit */
+    background-size: cover;
+
+    /* center the image vertically and horizontally */
+    background-position: center;
+
+    /* round the edges to a circle with border radius 1/2 container size */
+    border-radius: 50%;
+    margin: 0 auto;
+}
