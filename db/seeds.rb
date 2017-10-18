@@ -11,8 +11,6 @@ Item.destroy_all
 User.destroy_all
 puts 'Cleaning DB!'
 
-
-
 seller = User.create(email: "bobo@bobo.com", first_name:"Bo", last_name:"Bi", password: 'password', address: "tokyo") #u1
 buyer = User.create(email: "coco@coco.com", first_name:"Co", last_name:"Ci", password: 'password', address: "meguro")
 
@@ -26,10 +24,6 @@ pinneaples = Item.new(name: "pinneaple", good_until: Date.today, category: "vege
 ginger = Item.new(name: "ginger", good_until: Date.today, category: "fruit", quantity: 100, indicator: "kg", address:"tokyo", address:"tokyo")
 apples = Item.new(name: "apples", good_until: Date.today, category: "vegetable", quantity: 100, indicator: "kg", address:"tokyo", address:"saitama")
 
-bananas.user = seller
-bananas.save
-coconuts.user = seller
-coconuts.save
 puts 'Creating items!'
 
 bananas.user = seller
