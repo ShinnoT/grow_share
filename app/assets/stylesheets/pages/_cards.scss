@@ -1,18 +1,29 @@
 .card {
-  height: 175px;
+  height: 250px;
   text-shadow: 0 1px 3px rgba(0,0,0,0.4);
-  background-size: cover !important;
-  background-position: center;
-  color: white;
+  // background-size: cover !important;
+  // background-position: center;
+  background: white;
+  color: grey;
   position: relative;
   margin: 10px;
+  border-radius: 5%;
+  border-color: grey;
+  border-style: solid;
+  border-width: 1px;
+  box-shadow: 3px 3px 5px rgba(0,0,0,0.5);
+  transition: all .3s ease;
 }
+.card:hover {
+    box-shadow: 3px 3px 5px rgba(0,0,0,0.3);
+  }
 .card-user {
   position: absolute;
   right: 10px;
   top: 10px;
   width: 40px;
   border-radius: 50%;
+
 }
 .card-category {
   position: absolute;
@@ -26,8 +37,9 @@
   bottom: 10px;
   left: 10px;
 }
-.card-description h2 {
+.card-description h2 > a {
   font-size: 24px;
+
 }
 .card-description p {
   font-size: 14px;
@@ -41,12 +53,38 @@
   right: 0;
   width: 100%;
   z-index: 2;
-  background: grey;
+  background: green;
   opacity: 0;
 }
 .card-link:hover {
   opacity: 0.2;
 }
+
+.product-image {
+  width: 90px;
+  border-radius: 50%;
+  display: block;
+  margin: auto;
+  padding: 5px;
+}
+
+.btn-treehouse {
+  color: white;
+  padding: 10px 15px;
+  font-weight: bold;
+  background: #6AD58B;
+  transition: background 0.3s ease;
+  display: block;
+  margin: auto;
+}
+
+.btn-treehouse:hover {
+  opacity: 1;
+  background: #3ac162;
+  text-decoration: none;
+  color: white;
+}
+
 
 
 

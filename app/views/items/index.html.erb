@@ -1,36 +1,41 @@
+<!-- NAVBAR -->
 
-<Div>
+
+
 <div class="banner" style="background-image: linear-gradient(-225deg, rgba(0,101,168,0.6) 0%, rgba(0,36,61,0.6) 50%)>
     <%= image_tag "background2.png" %>
       <div class="banner-content">
         <h1>Grow Share Eat</h1>
-    <%= image_tag "logo_grow_share_long_f.png" %>
+        <%= image_tag "logo_grow_share_long_f.png" %>
         <p>Think global - Act local!</p>
 
 
 
-    <%= form_tag(root_path, method: :get) do %>
-      <%= text_field_tag :search, params[:search] %>
-      <%= submit_tag 'Search', name: nil %>
-    <% end %>
+        <%= form_tag(root_path, method: :get) do %>
+          <%= text_field_tag :search, params[:search] %>
+          <%= submit_tag 'Search', name: nil %>
+        <% end %>
 
 
     </div>
-  </div>
+</div>
 
-<div class="content">
+<div class="wrapper">
+
   <div class="container">
     <div class="row">
-      <div class="col-md-8">
-        <%= render "card" %>
-      </div>
+      <%= render "card" %>
       <!-- <div class="col-md-4">
         <div id="map" style="position: : relative; overflow: hidden;">
         </div>
       </div> -->
     </div>
   </div>
+
 </div>
 
-</Div>
+
+<!-- FOOTER -->
+
+
 
