@@ -4,4 +4,5 @@ class UsersController < ApplicationController
     @user_items = @user.items
     @user_bookings = @user.bookings
   end
+
 end

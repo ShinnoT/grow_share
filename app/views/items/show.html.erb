@@ -1,10 +1,28 @@
-<p>show page</p>
-<h1><%= @item.name %></h1>
-<h3><%= @item.category %></h3>
-<h3><%= @item.quantity %><%= @item.indicator %></h3>
 
-<p><%= @item.user.first_name %></p>
-<p><%= @item.user.email %></p>
-
-<%= link_to "buy this item", new_item_booking_path(@item) %>
+  <div class="container">
+    <div class="row">
+      <div class="col-xs-12 col-md-6">
+        <div class="studio-card">
+          <h1><%= @item.name %></h1>
+          <h3>Category: <%= @item.category %></h3>
+          <h3>Quantity: <%= @item.quantity %><%= @item.indicator %></h3>
+          <p>Seller: <%= @item.user.first_name %></p>
+          <p>Seller mail address: <%= @item.user.email %></p>
+          <p>
+            Bananas are rich in potassium, riboflavin, niacin, and dietary fibre. They also have high energy value and are really good for growing children and athletes. They are also excellent for low-salt, low-fat, and cholesterol-free diets. Hundreds of different varieties of banana flourish in the tropics, from sweet yellow pygmy to large fibrous plantains and green bananas, which can only be used for cooking
+          </p>
+          <%= link_to "Buy", new_item_booking_path(@item) , class: "btn btn-primary" %>
+        </div>
+        <a><strong><%= link_to "Back to Search", root_path %></strong></a>
+      </div>
+      <div class="col-xs-12 col-md-6">
+        <a></a>
+        <div class="studio-card">
+          <div>
+            <h1><%= image_tag "banana.png", :size => "400x400" , :alt =>"ll" %></h1>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
 

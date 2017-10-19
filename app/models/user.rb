@@ -1,6 +1,8 @@
 class User < ApplicationRecord
   # Include default devise modules. Others available are:
   # :confirmable, :lockable, :timeoutable and :omniauthable
+
+
   devise :database_authenticatable, :registerable,
          :recoverable, :rememberable, :trackable, :validatable, :omniauthable, omniauth_providers: [:facebook]
 
@@ -28,4 +30,6 @@ class User < ApplicationRecord
   has_many :items, dependent: :destroy
   has_many :bookings
 
+  geocoded_by :address
+  after_validation :geocode, if: :address_changed?
 end

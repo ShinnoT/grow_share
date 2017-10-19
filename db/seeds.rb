@@ -11,19 +11,35 @@ Item.destroy_all
 User.destroy_all
 puts 'Cleaning DB!'
 
+seller = User.create(email: "bobo@bobo.com", first_name:"Bo", last_name:"Bi", password: 'password', address: "tokyo") #u1
+buyer = User.create(email: "coco@coco.com", first_name:"Co", last_name:"Ci", password: 'password', address: "meguro")
 
-seller = User.create(email: "bobo@bobo.com", first_name:"Bo", last_name:"Bi", password: 'password') #u1
-buyer = User.create(email: "coco@coco.com", first_name:"Co", last_name:"Ci", password: 'password')
+bananas = Item.new(name: "banana", good_until: Date.today, category: "vegetable", quantity: 100, indicator: "kg", address:"tokyo")
+coconuts = Item.new(name: "coconut", good_until: Date.today, category: "fruit", quantity: 100, indicator: "kg", address:"tokyo")
+cherries = Item.new(name: "cherries", good_until: Date.today, category: "vegetable", quantity: 100, indicator: "kg", address:"shinagawa")
+cabbage = Item.new(name: "cabbage", good_until: Date.today, category: "fruit", quantity: 100, indicator: "kg",)
+couliflower = Item.new(name: "couliflower", good_until: Date.today, category: "vegetable", quantity: 100, indicator: "kg", address:"shinjuku")
+durian = Item.new(name: "durian", good_until: Date.today, category: "fruit", quantity: 100, indicator: "kg",)
+pinneaples = Item.new(name: "pinneaple", good_until: Date.today, category: "vegetable", quantity: 100, indicator: "kg", address:"mejiro")
+ginger = Item.new(name: "ginger", good_until: Date.today, category: "fruit", quantity: 100, indicator: "kg", address:"tokyo", address:"tokyo")
+apples = Item.new(name: "apples", good_until: Date.today, category: "vegetable", quantity: 100, indicator: "kg", address:"tokyo", address:"saitama")
 
-bananas = Item.new(name: "banana", good_until: Date.today, category: "vegetable", quantity: 100, indicator: "kg")
-coconuts = Item.new(name: "coconut", good_until: Date.today, category: "fruit", quantity: 100, indicator: "kg")
-
+puts 'Creating items!'
 
 bananas.user = seller
 bananas.save
 coconuts.user = seller
 coconuts.save
-puts 'Creating items!'
+cherries.user = seller
+cherries.save
+
+durian.user = seller
+durian.save
+couliflower.user = seller
+couliflower.save
+pinneaples.user = seller
+pinneaples.save
+
 
 b1 = Booking.new(user: buyer, item: coconuts, date: Date.today)
 b1.save
