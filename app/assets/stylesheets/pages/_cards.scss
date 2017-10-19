@@ -1,5 +1,4 @@
 .card {
-  height: 250px;
   width: 100%;
   text-shadow: 0 1px 3px rgba(0,0,0,0.4);
   background-size: cover !important;
@@ -34,10 +33,7 @@
   text-transform: uppercase;
 }
 .card-description {
-  position: absolute;
-  bottom: 10px;
-  left: 10px;
-  width: calc(100% - 20px);
+  padding: 10px
 }
 .card-description h2 > a {
   font-size: 24px;
