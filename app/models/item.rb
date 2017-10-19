@@ -1,4 +1,5 @@
 class Item < ApplicationRecord
+  has_attachment :photo
   belongs_to :user
   has_many :bookings
   validates :name, :good_until, :category, :quantity, :indicator,  presence: true
