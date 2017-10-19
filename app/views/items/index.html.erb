@@ -9,13 +9,20 @@
 
         <p>GrowShare brings the farmer's market to you</p>
 
-
     <div class="form">
     <%= form_tag(root_path, method: :get) do %>
       <%= text_field_tag :search, params[:search], class:"search-bar " %>
       <%= submit_tag 'Search', name: nil, class: "search-button search-button-banner"%>
     <% end %>
     </div>
+
+<!--     <div class="form">
+    <%#= form_tag(root_path(anchor: "map"), method: :get) do %>
+      <%#= text_field_tag :search, params[:search], class:"search-bar " %>
+      <%#= submit_tag 'Search', name: nil, class: "search-button search-button-banner"%>
+    <%# end %>
+    </div> -->
+    <!-- we can do this in ruby so the it jumps to a section of the page but it doesn't scroll -->
 
     </div>
 </div>
@@ -27,11 +34,24 @@
     </div>
   </div>
 
-  <div class="dynamic-map">
+  <div id="map" class="dynamic-map">
       <%= render "map" %>
   </div>
 </div>
   </div>
+
+
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
+<script>
+  // /?utf8=✓&search=Lobster
+  if(/&search=/.test(window.location.href) && $(".content").length > 0){
+      // event.preventDefault();
+      // event.stopPropagation();
+      $('html,body').animate({
+        scrollTop: $(".content").offset().top
+      }, 600);
+  }
+</script>
 
 
 
