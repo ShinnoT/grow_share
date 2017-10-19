@@ -9,7 +9,7 @@
           <p>Seller: <%= @item.user.first_name %></p>
           <p>Seller mail address: <%= @item.user.email %></p>
           <p>
-            Bananas are rich in potassium, riboflavin, niacin, and dietary fibre. They also have high energy value and are really good for growing children and athletes. They are also excellent for low-salt, low-fat, and cholesterol-free diets. Hundreds of different varieties of banana flourish in the tropics, from sweet yellow pygmy to large fibrous plantains and green bananas, which can only be used for cooking
+            <%= @item.description %>
           </p>
           <%= link_to "Buy", new_item_booking_path(@item) , class: "btn btn-primary" %>
         </div>

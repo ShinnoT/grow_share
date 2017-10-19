@@ -7,8 +7,8 @@ class Item < ApplicationRecord
   validates :category, inclusion: { in: ["vegetable", "fruit"], allow_nil: false }
   validates :indicator, inclusion: { in: ["kg", "g"], allow_nil: false }
 
-  # before_save :capitalize_item_name
-  before_save { |user| user.name.capitalize }
+  before_save :capitalize_item_name
+  # before_save { |user| user.name.capitalize }
 
   def self.search(query)
     where("name LIKE ?", "%#{query}%")
@@ -20,7 +20,6 @@ class Item < ApplicationRecord
   private
 
   def capitalize_item_name
-    down = self.name.downcase
-    return down.capitalize
+    self.name = self.name.downcase.capitalize
   end
 end
