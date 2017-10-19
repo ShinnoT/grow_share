@@ -75,3 +75,35 @@
   border-left: 1px solid #E6E6E6;
   border-top: 1px solid #E6E6E6;
 }
+
+.search-button {
+  color: white;
+  border: none;
+  border-radius: 4px;
+  font-weight: bold;
+  background: #6AD58B;
+  transition: background 0.3s ease;
+}
+.search-button:hover {
+  opacity: 1;
+  background: #3ac162;
+  text-decoration: none;
+  color: white;
+}
+
+.container-logo-search {
+  display: flex;
+  align-items: center;
+
+.logo {
+  margin: 0 center;
+  margin-right: 15px;
+}
+
+.search {
+  position: center;
+
+}
+}
+
+
