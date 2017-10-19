@@ -18,12 +18,10 @@ class ItemsController < ApplicationController
     else
       @items = Item.all.joins(:user).where.not(users: {latitude: nil})
     end
-
     @hash = Gmaps4rails.build_markers(@items) do |item, marker|
       marker.lat item.user.latitude
       marker.lng item.user.longitude
     end
-
   end
 
   def show
