@@ -1,7 +1,7 @@
 
 
 <% @items.each do |item| %>
-      <div class="col-xs-12 col-sm-12 col-md-6 col-lg-4">
+      <div class="col-xs-12 col-sm-12 <%= @items.count == 1 ? "col-md-12 col-lg-12" : "col-md-6 col-lg-4" %>">
 
           <div class="card">
             <%= item_image_tag_or_default(item) %>
