@@ -1,4 +1,5 @@
 class Item < ApplicationRecord
+  has_attachment :photo
   belongs_to :user
   has_many :bookings
   validates :name, :good_until, :category, :quantity, :indicator,  presence: true
@@ -8,8 +9,6 @@ class Item < ApplicationRecord
   def self.search(query)
     where("name LIKE ?", "%#{query}%")
   end
-
-  has_attachments :photo
   geocoded_by :address
   after_validation :geocode, if: :address_changed?
 end

@@ -79,10 +79,13 @@
 .search-button {
   color: white;
   border: none;
-  border-radius: 4px;
+  border-radius: 8px;
   font-weight: bold;
   background: #6AD58B;
   transition: background 0.3s ease;
+  }
+.search-button-banner {
+  height: 50px;
 }
 .search-button:hover {
   opacity: 1;
@@ -94,7 +97,7 @@
 .container-logo-search {
   display: flex;
   align-items: center;
-
+}
 .logo {
   margin: 0 center;
   margin-right: 15px;
@@ -104,6 +107,13 @@
   position: center;
 
 }
+
+.search-bar {
+ width: 70%;
+ text-align:right;
+ height: 50px;
+ margin: 10px;
+ border-radius: 8px;
 }
 
 

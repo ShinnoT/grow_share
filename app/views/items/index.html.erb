@@ -1,7 +1,7 @@
 <!-- NAVBAR -->
 
 
-
+<!-- BANNER SEARCH -->
 <div class="banner" style="background-image: linear-gradient(-225deg, rgba(0,101,168,0.6) 0%, rgba(0,36,61,0.6) 50%)>
     <%= image_tag "background2.png" %>
       <div class="banner-content">
@@ -12,51 +12,29 @@
 
     <div class="form">
     <%= form_tag(root_path, method: :get) do %>
-      <%= text_field_tag :search, params[:search] %>
-      <%= submit_tag 'Search', name: nil %>
+      <%= text_field_tag :search, params[:search], class:"search-bar " %>
+      <%= submit_tag 'Search', name: nil, class: "search-button search-button-banner"%>
     <% end %>
     </div>
 
     </div>
 </div>
-
-<div class="wrapper">
-
-  <div class="container">
+<!-- CARDS AND MAP -->
+<div class="content">
+  <div class="container-text">
     <div class="row">
       <%= render "card" %>
-      <!-- <div class="col-md-4">
-        <div id="map" style="position: : relative; overflow: hidden;">
-        </div>
-      </div> -->
     </div>
   </div>
 
+  <div class="dynamic-map">
+      <%= render "map" %>
+  </div>
 </div>
+  </div>
 
 
 
-<div id="map" style="width: 100%; height: 600px;"></div>
-
-
-
-<% content_for(:after_js) do %>
-  <%= javascript_tag do %>
-    $(document).ready(function() {
-      var handler = Gmaps.build('Google');
-      handler.buildMap({ internal: { id: 'map' } }, function() {
-        markers = handler.addMarkers(<%= raw @hash.to_json %>);
-        handler.bounds.extendWith(markers);
-        handler.fitMapToBounds();
-        if (markers.length == 0) {
-          handler.getMap().setZoom(2);
-        } else if (markers.length == 1) {
-          handler.getMap().setZoom(14);
-        }
-      });
-    });
-  <% end %>
-<% end %>
 
 
 
