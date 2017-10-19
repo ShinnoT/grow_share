@@ -13,6 +13,7 @@ puts 'Cleaning DB!'
 
 cities = ["meguro","tokyo","shinjuku","komagome","ebisu","ueno","hokkaido","osaka","rappongi"]
 categories = ["fruit", "vegetable"]
+price = [12, 5, 3, 6]
 quant = [10, 20, 30, 40]
 
 12.times do
@@ -20,7 +21,7 @@ quant = [10, 20, 30, 40]
 end
 
 12.times do
-  Item.create(name: Faker::Food.ingredient, good_until: Date.today, category: categories.sample, quantity: quant.sample, indicator: "kg", user_id: User.order("RANDOM()").first.id)
+  Item.create(name: Faker::Food.ingredient, good_until: Date.today, category: categories.sample, quantity: quant.sample, indicator: "kg", user_id: User.order("RANDOM()").first.id, price: price.sample, description: "this is some great produce!")
 end
 
 puts 'Creating items!'
