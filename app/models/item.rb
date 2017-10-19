@@ -6,9 +6,11 @@ class Item < ApplicationRecord
   validates :quantity, :price, numericality: { only_integer: true }
   validates :category, inclusion: { in: ["vegetable", "fruit"], allow_nil: false }
   validates :indicator, inclusion: { in: ["kg", "g"], allow_nil: false }
+
   def self.search(query)
     where("name LIKE ?", "%#{query}%")
   end
+
   geocoded_by :address
   after_validation :geocode, if: :address_changed?
 end
