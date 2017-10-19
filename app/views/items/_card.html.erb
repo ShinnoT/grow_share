@@ -2,14 +2,13 @@
       <div class="col-xs-12 col-sm-4">
 
           <div class="card">
-            <%= image_tag "Logo_grow_share_short.png", class: "product-image"%>
+            <%= item_image_tag_or_default(item) %>
           <div class="card-description">
               <h3><%= item.name.capitalize %></h3>
               <p>Super fresh and yummy</p>
               <p>34 USD</p>
           </div>
               <%= link_to "Show me more", item_path(item), class: "btn-treehouse" %>
-
           </div>
       </div>
 <% end %>
