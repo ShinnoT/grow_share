@@ -7,6 +7,13 @@
       <%= image_tag "Logo_grow_share_short.png" %>
     <% end %>
     </div>
+
+    <% unless current_page?('/') %>
+        <div class="search">
+          <%= render "search" %>
+       </div>
+    <% end %>
+
   </div>
   <div class="right-part">
   <!-- Right Navigation -->
