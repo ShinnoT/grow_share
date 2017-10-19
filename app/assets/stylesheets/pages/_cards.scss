@@ -1,6 +1,6 @@
 .card {
   height: 250px;
-  width: 250px;
+  width: 100%;
   text-shadow: 0 1px 3px rgba(0,0,0,0.4);
   background-size: cover !important;
   background-position: center;
@@ -37,6 +37,7 @@
   position: absolute;
   bottom: 10px;
   left: 10px;
+  width: calc(100% - 20px);
 }
 .card-description h2 > a {
   font-size: 24px;
@@ -62,10 +63,11 @@
 }
 
 .product-image {
-  width: 90px;
+  width: auto;
   border-radius: 50%;
   display: block;
   margin: auto;
+  height: 120px;
   padding: 5px;
 }
 
@@ -89,4 +91,11 @@
 
 
 
+.card h3 {
+  white-space: nowrap;
+  text-overflow: ellipsis;
+  overflow: hidden;
+  width: 100%;
+  display: block;
 
+}
