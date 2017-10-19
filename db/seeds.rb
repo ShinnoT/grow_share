@@ -11,36 +11,23 @@ Item.destroy_all
 User.destroy_all
 puts 'Cleaning DB!'
 
-seller = User.create(email: "bobo@bobo.com", first_name:"Bo", last_name:"Bi", password: 'password', address: "tokyo") #u1
-buyer = User.create(email: "coco@coco.com", first_name:"Co", last_name:"Ci", password: 'password', address: "meguro")
+cities = ["meguro","tokyo","shinjuku","komagome","ebisu","ueno","hokkaido","osaka","rappongi"]
+categories = ["fruit", "vegetable"]
+price = [12, 5, 3, 6]
+quant = [10, 20, 30, 40]
 
-bananas = Item.new(name: "banana", good_until: Date.today, category: "vegetable", quantity: 100, indicator: "kg", address:"tokyo")
-coconuts = Item.new(name: "coconut", good_until: Date.today, category: "fruit", quantity: 100, indicator: "kg", address:"tokyo")
-cherries = Item.new(name: "cherries", good_until: Date.today, category: "vegetable", quantity: 100, indicator: "kg", address:"shinagawa")
-cabbage = Item.new(name: "cabbage", good_until: Date.today, category: "fruit", quantity: 100, indicator: "kg",)
-couliflower = Item.new(name: "couliflower", good_until: Date.today, category: "vegetable", quantity: 100, indicator: "kg", address:"shinjuku")
-durian = Item.new(name: "durian", good_until: Date.today, category: "fruit", quantity: 100, indicator: "kg",)
-pinneaples = Item.new(name: "pinneaple", good_until: Date.today, category: "vegetable", quantity: 100, indicator: "kg", address:"mejiro")
-ginger = Item.new(name: "ginger", good_until: Date.today, category: "fruit", quantity: 100, indicator: "kg", address:"tokyo", address:"tokyo")
-apples = Item.new(name: "apples", good_until: Date.today, category: "vegetable", quantity: 100, indicator: "kg", address:"tokyo", address:"saitama")
+12.times do
+  User.create(email: Faker::Internet.email, first_name: Faker::Name.first_name, last_name:Faker::Name.last_name , password: 'password', address: cities.sample)
+end
+
+12.times do
+  Item.create(name: Faker::Food.ingredient, good_until: Date.today, category: categories.sample, quantity: quant.sample, indicator: "kg", user_id: User.order("RANDOM()").first.id, price: price.sample, description: "this is some great produce!")
+end
 
 puts 'Creating items!'
 
-bananas.user = seller
-bananas.save
-coconuts.user = seller
-coconuts.save
-cherries.user = seller
-cherries.save
+Booking.create(user: User.order("RANDOM()").first, item: Item.order("RANDOM()").first, date: Date.today)
 
-durian.user = seller
-durian.save
-couliflower.user = seller
-couliflower.save
-pinneaples.user = seller
-pinneaples.save
-
-
-b1 = Booking.new(user: buyer, item: coconuts, date: Date.today)
-b1.save
 puts "saved booking"
+
+# Item.first.user.address
