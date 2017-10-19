@@ -9,8 +9,6 @@ class Item < ApplicationRecord
   def self.search(query)
     where("name LIKE ?", "%#{query}%")
   end
-
-  has_attachments :photo
   geocoded_by :address
   after_validation :geocode, if: :address_changed?
 end

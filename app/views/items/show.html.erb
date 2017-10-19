@@ -20,7 +20,7 @@
         <div class="studio-card">
           <div>
             <% if @item.photo? %>
-              <%= cl_image_tag @item.photo.path, width: 200, height: 300, crop: :fill %>
+              <h1><%= cl_image_tag @item.photo.path, width: 200, height: 300, crop: :fill %></h1>
             <% else %>
               <h1><%= image_tag "banana.png", :size => "400x400" , :alt =>"ll" %></h1>
             <% end %>
