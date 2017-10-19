@@ -7,10 +7,19 @@ class Item < ApplicationRecord
   validates :category, inclusion: { in: ["vegetable", "fruit"], allow_nil: false }
   validates :indicator, inclusion: { in: ["kg", "g"], allow_nil: false }
 
+  before_save :capitalize_item_name
+  # before_save { |user| user.name.capitalize }
+
   def self.search(query)
     where("name LIKE ?", "%#{query}%")
   end
 
   geocoded_by :address
   after_validation :geocode, if: :address_changed?
+
+  private
+
+  def capitalize_item_name
+    self.name = self.name.downcase.capitalize
+  end
 end
