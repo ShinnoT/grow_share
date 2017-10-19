@@ -5,12 +5,12 @@
 
           <div class="card">
             <%= item_image_tag_or_default(item) %>
-          <div class="card-description">
+            <%= link_to "Show me more", item_path(item), class: "btn-treehouse" %>
+            <div class="card-description">
               <h3><%= item.name.capitalize %></h3>
               <p>Super fresh and yummy</p>
               <p><%= item.price %> USD</p>
-          </div>
-              <%= link_to "Show me more", item_path(item), class: "btn-treehouse" %>
+            </div>
           </div>
       </div>
 <% end %>
