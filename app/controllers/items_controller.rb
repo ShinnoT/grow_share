@@ -13,7 +13,7 @@ class ItemsController < ApplicationController
   def index
    @items = Item.all.joins(:user).where.not(users: {latitude: nil})
     if params[:search]
-      @items = @items.where("name LIKE ?", "%#{params[:search]}%")
+      @items = @items.where("name LIKE ?", "%#{params[:search].capitalize}%")
       # @items = Item.all.joins(:user).where.not(users: {latitude: nil}) #items of the user where longitude and latitude not nil
     else
       @items = Item.all.joins(:user).where.not(users: {latitude: nil})
@@ -49,7 +49,7 @@ class ItemsController < ApplicationController
   private
 
   def item_params
-    params.require(:item).permit(:name, :good_until, :category, :quantity, :indicator, :photo)
+    params.require(:item).permit(:name, :good_until, :category, :quantity, :indicator,:price, :description, :photo)
   end
 end
 
