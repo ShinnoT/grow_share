@@ -13,6 +13,7 @@ puts 'Cleaning DB!'
 
 cities = ["meguro","tokyo","shinjuku","komagome","ebisu","ueno","hokkaido","osaka","rappongi"]
 categories = ["fruit", "vegetable"]
+photos = ["http://blog.oxforddictionaries.com/wp-content/uploads/potato.jpg", "http://www.motherjones.com/wp-content/uploads/2017/08/pumpkin-4.jpg?w=630"]
 price = [12, 5, 3, 6]
 quant = [10, 20, 30, 40]
 
@@ -21,10 +22,24 @@ quant = [10, 20, 30, 40]
 end
 
 12.times do
-  Item.create(name: Faker::Food.ingredient, good_until: Date.today, category: categories.sample, quantity: quant.sample, indicator: "kg", user_id: User.order("RANDOM()").first.id, price: price.sample, description: "this is some great produce!")
+  food = Item.create(
+    name: Faker::Food.ingredient,
+    good_until: Date.today,
+    category: categories.sample,
+    quantity: quant.sample,
+    indicator: "kg",
+    user_id: User.order("RANDOM()").first.id,
+    price: price.sample,
+    description: "this is some great produce!"
+  )
+
+  food.photo_url = photos.sample
+
+
 end
 
 puts 'Creating items!'
+
 
 Booking.create(user: User.order("RANDOM()").first, item: Item.order("RANDOM()").first, date: Date.today)
 
