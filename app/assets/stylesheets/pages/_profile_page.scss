@@ -1,6 +1,6 @@
 .second-container {
   margin: 20px;
-  height: 80vh;
+  height: 55vh;
   // background-image: url('http://www.woolffarming.com/img/web/background.jpg');
   background: linear-gradient(rgba(0, 0, 0, 0.3), rgba(0, 0, 0, 0.3)), url('https://horticulture.ahdb.org.uk/sites/default/files/u2815/Cabbage.jpg');
   background-size: cover;
@@ -15,7 +15,7 @@
     font-weight: bolder;
   }
   h3 {
-    margin-top: 100px;
+    margin-top: 50px;
   }
   li {
     font-size: 22px;
@@ -37,13 +37,13 @@
   margin-top: 70px;
 }
 .flex-item {
-  // height: 50px;
-  // min-width: 100px;
+  height: 200px;
+  min-width: 100px;
   flex-grow: 2;
   margin: 50px;
   background: rgba(250, 250, 250, 0.9);
   border-radius: 10px;
-  padding-bottom: 30px;
+  padding-bottom: 20px;
   padding-top: 0px;
   color: rgb(50, 50, 50);
 }
