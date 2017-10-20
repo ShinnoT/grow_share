@@ -11,7 +11,7 @@ Item.destroy_all
 User.destroy_all
 puts 'Cleaning DB!'
 
-cities = ["meguro","tokyo","shinjuku","komagome","ebisu","ueno","hokkaido","osaka","rappongi"]
+cities = ["meguro","tokyo","shinjuku","komagome","ebisu","ueno","hokkaido","osaka","roppongi"]
 categories = ["fruit", "vegetable"]
 photos = ["http://blog.oxforddictionaries.com/wp-content/uploads/potato.jpg", "http://www.motherjones.com/wp-content/uploads/2017/08/pumpkin-4.jpg?w=630"]
 price = [12, 5, 3, 6]
@@ -37,6 +37,45 @@ end
 
 
 end
+
+new_user = User.create(first_name: "shinno", last_name: "t", email: "email@email.com", password: "123456", address: cities.sample)
+other_user = User.create(first_name: "whatever", last_name: "whatever", email: "blahblah@email.com", password: "123456", address: cities.sample)
+user5 = User.create(first_name: "whatever", last_name: "whatever", email: "blahblahsfdf@email.com", password: "123456", address: cities.sample)
+user6 = User.create(first_name: "whatever", last_name: "whatever", email: "blahblahfrg@email.com", password: "123456", address: cities.sample)
+user7 = User.create(first_name: "whatever", last_name: "whatever", email: "blahblahsrgrrg@email.com", password: "123456", address: cities.sample)
+user8 = User.create(first_name: "whatever", last_name: "whatever", email: "blahblahrgswefg@email.com", password: "123456", address: cities.sample)
+
+
+
+potato = Item.new(name: "Potato", good_until: Date.today, category: "vegetable", quantity: 10, indicator: "kg", price: 15, description: "this is some great produce!")
+potato.user = new_user
+potato.photo_url = "http://blog.oxforddictionaries.com/wp-content/uploads/potato.jpg"
+potato.save
+
+potato2 = Item.new(name: "Potato", good_until: Date.today, category: "vegetable", quantity: 10, indicator: "kg", price: 15, description: "this is some great produce!")
+potato2.user = other_user
+potato2.photo_url = "http://blog.oxforddictionaries.com/wp-content/uploads/potato.jpg"
+potato2.save
+
+potato3 = Item.new(name: "Potato", good_until: Date.today, category: "vegetable", quantity: 10, indicator: "kg", price: 15, description: "this is some great produce!")
+potato3.user = user5
+potato3.photo_url = "http://blog.oxforddictionaries.com/wp-content/uploads/potato.jpg"
+potato3.save
+
+potato4 = Item.new(name: "Potato", good_until: Date.today, category: "vegetable", quantity: 10, indicator: "kg", price: 15, description: "this is some great produce!")
+potato4.user = user6
+potato4.photo_url = "http://blog.oxforddictionaries.com/wp-content/uploads/potato.jpg"
+potato4.save
+
+potato5 = Item.new(name: "Potato", good_until: Date.today, category: "vegetable", quantity: 10, indicator: "kg", price: 15, description: "this is some great produce!")
+potato5.user = user7
+potato5.photo_url = "http://blog.oxforddictionaries.com/wp-content/uploads/potato.jpg"
+potato5.save
+
+potato6 = Item.new(name: "Potato", good_until: Date.today, category: "vegetable", quantity: 10, indicator: "kg", price: 15, description: "this is some great produce!")
+potato6.user = user8
+potato6.photo_url = "http://blog.oxforddictionaries.com/wp-content/uploads/potato.jpg"
+potato6.save
 
 puts 'Creating items!'
 
