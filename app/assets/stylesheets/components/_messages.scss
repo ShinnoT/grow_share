@@ -1,33 +1,27 @@
-.studio-card {
+
+ .studio-card > h1 {
+  font-size: 50px;
+  color: grey;
 
 }
 
 
-.studio-card > h1 {
+.studio-card > p {
 
 }
-.studio-card > h3 {
+.studio-card  {
 
 }
-
-.studio-card > {
-
-}
-
 .studio-image >  {
-
 }
-
-
 .btn-search {
-
 }
 
 
 .message {
   display: flex;
   align-items: center;
-  padding: 20px;
+
   border-bottom: 1px solid rgba(220,224,244,0.4);
 }
 .message:last-child {
@@ -35,6 +29,7 @@
 }
 .message-body {
   flex-grow: 1;
+  padding-right: 10px;
 }
 .message-name {
   padding-left: 10px;
@@ -49,6 +44,7 @@
   font-weight: lighter;
   opacity: 0.6;
   margin-top: 5px;
+
 }
 .message-body {
   padding-left: 10px;
@@ -56,7 +52,7 @@
   color: rgba(0,0,0,0.7);
 }
 .message-body {
-  padding-left: 20px;
+
   color: rgba(0,0,0,0.4);
 }
 .message-body strong{
@@ -87,6 +83,7 @@
 .avatar-large {
   width: 50px;
   border-radius: 50%;
+
 }
 .avatar-bordered {
   width: 30px;
@@ -99,4 +96,10 @@
   border-radius: 0px;
   box-shadow: 0 1px 2px rgba(0,0,0,0.2);
   border: white 1px solid;
+}
+
+
+ul {
+  list-style-type: none;
+  padding: 1px;
 }
