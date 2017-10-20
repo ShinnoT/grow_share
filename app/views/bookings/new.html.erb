@@ -1,13 +1,42 @@
 <!-- a create page for bookings (will be redirected here after buyer pressed "buy" on /items/show.html.erb -->
 
+<style>
+  #booking-form {
+    padding: 50px;
+  }
+  .button {
+    border-radius: 3px;
+    text-align: center;
+    width: 400px;
+  }
+  .date-input {
+    width: 400px;
+  }
+  .form-box {
+    width: 400px;
+    margin: 0 auto;
+  }
+  .booking-title {
+    text-align: center;
+    margin-top: 50px;
+  }
+</style>
+
+<div class="booking-title">
+  <h1>Pick a date you want to pick up your <%= @item.name %>!</h1>
+</div>
 <div class="container">
   <div class="row">
-    <div class="col-sm-6 col-sm-offset-3">
-      <%= simple_form_for [@item, @booking] do |f| %>
-        <%= f.input :date %>
-        <%#= f.association :ingredient, as: :select %>
-        <%= f.button :submit %>
-      <% end %>
+    <div class="col-md-8 col-sm-offset-2">
+      <div id="booking-form">
+        <%= simple_form_for [@item, @booking] do |f| %>
+          <div class="form-box">
+            <%= f.input :date, class: "date-input" %>
+            <%#= f.association :ingredient, as: :select %>
+            <%= f.button :submit, class: "btn btn-primary button" %>
+          </div>
+        <% end %>
+      </div>
     </div>
   </div>
 </div>
