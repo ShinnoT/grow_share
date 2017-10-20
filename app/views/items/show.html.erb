@@ -2,33 +2,31 @@
   <div class="row">
     <div class="col-xs-12 col-md-6">
       <div class="description">
+
         <div class="studio-card">
           <h1><%= @item.name %></h1>
             <div class="message">
                 <ul>
-                <li>
-                <div class="message-body">
-                  <p><strong>Product info:</strong> <%= @item.description %></p>
-                </div>
+                  <li>
+                    <div class="message-body">
+                      <p><strong>Product info:</strong> <%= @item.description %></p>
+                    </div>
                 </li>
-
+                  <li>
+                    <div class="message-body">
+                      <p><strong>Category:</strong> <%= @item.category %></p>
+                   </div>
+                  </li>
                 <li>
-                <div class="message-body">
-                  <p><strong>Category:</strong> <%= @item.category %></p>
-               </div>
-                </li>
-
-                <li>
-                <div class="message-body">
-                  <p><strong>Quantity:</strong> <%= @item.quantity %><%= @item.indicator %> </p>
-               </div>
-                </li>
-
-                <li>
-                <div class="message-body">
-                  <p><strong>Price:</strong> Price: 10$/kg</p>
-               </div>
-                </li>
+                  <div class="message-body">
+                    <p><strong>Quantity:</strong> <%= @item.quantity %><%= @item.indicator %> </p>
+                  </div>
+                  </li>
+                  <li>
+                    <div class="message-body">
+                        <p><strong>Price:</strong> <%= @item.price %></p>
+                     </div>
+                  </li>
               </ul>
             </div>
 
@@ -36,7 +34,7 @@
                 <div class="message-body">
                   <p><strong>Seller review:</strong></p>
                   <p>
-                   Hello neighbour! I'm passianate about food. I'm producing in my garden delicius produce. I hope you will enjoy it :-)!
+                   Hello neighbour! I'm passionate about food. I'm producing in my garden delicius produce. I hope you will enjoy it :-)!
                   </p>
                 </div>
 
@@ -54,7 +52,7 @@
               </div>
 
           <div class="btn-search">
-           <a><strong><%= link_to "Back to Search", root_path %></strong></a>–
+           <a><strong><%= link_to "Back to Search", root_path %></strong></a>
           </div>
         </div>
       </div>
