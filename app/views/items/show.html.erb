@@ -18,9 +18,9 @@
               <p>10/07/17</p>
             </div>
             <div class="message-body">
-              <p><strong>I am not sure yet!</strong></p>
+              <p><strong>Best in Detroit!</strong></p>
               <p>
-                I am not sure yet! I might be in Shanghai at this moment... Can I tell you later?
+                AMAZING POTATOS FROM THIS FARM
               </p>
             </div>
             <div class="message-status">
@@ -29,7 +29,11 @@
             </div>
           </div>
 
-
+          <%= render 'reviews/form', user: @user, review: @review %>
+          <p> </p>
+          <p> </p>
+          <p> </p>
+          <p> </p>
           <div class="btn-buy"> <%= link_to "Buy", new_item_booking_path(@item) , class: "btn btn-primary" %>
           </div>
           <div class="btn-search">
@@ -55,4 +59,4 @@
   </div>
 
 
-  <%= render 'reviews/form', user: @user, review: @review %>
+
