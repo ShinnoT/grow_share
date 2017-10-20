@@ -12,11 +12,14 @@ class ItemsController < ApplicationController
 
   def index
    @items = Item.all.joins(:user).where.not(users: {latitude: nil})
+   @items = @items.joins('LEFT OUTER JOIN bookings ON bookings.item_id = items.id').where('bookings.item_id IS NULL')
     if params[:search]
       @items = @items.where("name LIKE ?", "%#{params[:search].capitalize}%")
+      # @items = @items.all.where("name LIKE ?", "%#{params[:search].capitalize}%")
       # @items = Item.all.joins(:user).where.not(users: {latitude: nil}) #items of the user where longitude and latitude not nil
     else
-      @items = Item.all.joins(:user).where.not(users: {latitude: nil})
+      @items
+      # = Item.all.joins(:user).where.not(users: {latitude: nil})
     end
     @hash = Gmaps4rails.build_markers(@items) do |item, marker|
       marker.lat item.user.latitude
