@@ -32,12 +32,16 @@
 
              <div class="message">
                 <div class="message-body">
-                  <p><strong>Seller review:</strong></p>
+                  <p><strong>His farm is organic:</strong></p>
                   <p>
-                   Hello neighbour! I'm passionate about food. I'm producing in my garden delicius produce. I hope you will enjoy it :-)!
+                  Really great produce
                   </p>
-                </div>
+                  <p><strong>ROCKIN ORANGES:</strong></p>
+                  <p>
+                   Organic and tasty
+                  </p>
 
+                </div>
                 <div class="message-status">
                   <p class="status pending">ranking</p>
                   <p class="price">* * * *</p>
@@ -51,7 +55,9 @@
              <img class="avatar-large" src="https://kitt.lewagon.com/placeholder/users/gabriel-dehan">
               </div>
 
+
           <div class="btn-search">
+          <%= render 'reviews/form', user: @user, review: @review %>
            <a><strong><%= link_to "Back to Search", root_path %></strong></a>
           </div>
         </div>
@@ -77,5 +83,7 @@
       </div>
     </div>
   </div>
+
 </div>
+
 

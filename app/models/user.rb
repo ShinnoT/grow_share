@@ -29,6 +29,7 @@ class User < ApplicationRecord
 
   has_many :items, dependent: :destroy
   has_many :bookings
+  has_many :reviews
 
   geocoded_by :address
   after_validation :geocode, if: :address_changed?

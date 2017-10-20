@@ -29,6 +29,9 @@ class ItemsController < ApplicationController
 
   def show
     @item = Item.find(params[:id])
+    @reviews = @item.user.reviews
+    @review = Review.new  # <-- You need this now
+     @seller = @item.user
   end
 
   def new
