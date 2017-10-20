@@ -1,15 +1,14 @@
-
-  <div class="content">
-    <div class="row">
-      <div class="col-xs-12 col-md-6">
+<div class="container">
+  <div class="row">
+    <div class="col-xs-12 col-md-6">
+      <div class="description">
         <div class="studio-card">
           <h1><%= @item.name %></h1>
           <h3>Category: <%= @item.category %></h3>
           <h3>Quantity: <%= @item.quantity %><%= @item.indicator %></h3>
           <p>Seller: <%= @item.user.first_name %></p>
           <p>Seller mail address: <%= @item.user.email %></p>
-          <p><%= @item.description %></p>
-
+          <p>Description: <%= @item.description %></p>
 
           <div class="message">
             <img class="avatar-large" src="https://kitt.lewagon.com/placeholder/users/gabriel-dehan">
@@ -17,39 +16,42 @@
               <h3>Gab Dehan</h3>
               <p>10/07/17</p>
             </div>
+
             <div class="message-body">
               <p><strong>I am not sure yet!</strong></p>
               <p>
                 I am not sure yet! I might be in Shanghai at this moment... Can I tell you later?
               </p>
             </div>
+
             <div class="message-status">
               <p class="status pending">Pending</p>
               <p class="price">€345</p>
             </div>
           </div>
-
-
-          <div class="btn-buy"> <%= link_to "Buy", new_item_booking_path(@item) , class: "btn btn-primary" %>
-          </div>
-          <div class="btn-search">
-           <a><strong><%= link_to "Back to Search", root_path %></strong></a>–
-          </div>
+          <a><strong><%= link_to "Back to Search", root_path %></strong></a>
         </div>
       </div>
-
-
-      <div class="col-xs-12 col-md-6">
-
-        <div class="studio-image">
-          <div>
+    </div>
+    <div class="col-xs-12 col-md-6">
+      <div class="studio-card">
+        <div class="popup">
+          <div class="row">
+            <p>¥ <%= @item.price %> per <%= @item.quantity %><%= @item.indicator %></p>
+          </div>
+          <div class="row">
             <% if @item.photo? %>
-              <h1><%= cl_image_tag @item.photo.path, width: 400, height: 400, crop: :fill %></h1>
+            <h1><%= cl_image_tag @item.photo.path, width: 360, height: 360, crop: :fill %></h1>
             <% else %>
-              <h1><%= image_tag "banana.png", :size => "400x400" , :alt =>"ll" %></h1>
+            <h1><%= image_tag "banana.png", :size => "360x360" , :alt =>"ll" %></h1>
             <% end %>
+          </div>
+          <div class="row">
+            <%= link_to "Buy", new_item_booking_path(@item) , class: "btn btn-primary" %>
           </div>
         </div>
       </div>
     </div>
   </div>
+</div>
+
