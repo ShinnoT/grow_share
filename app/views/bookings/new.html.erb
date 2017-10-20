@@ -1,8 +1,57 @@
 <!-- a create page for bookings (will be redirected here after buyer pressed "buy" on /items/show.html.erb -->
 
+<style>
+  #booking-form {
+    padding: 50px;
+    background-color: white;
+    border-radius: 3px;
+    box-shadow: 3px 3px 5px rgba(0, 0, 0, 0.5);
+  }
+  .button {
+    border-radius: 3px;
+    text-align: center;
+    width: 400px;
+  }
+  .date-input {
+    width: 400px;
+  }
+  .form-box {
+    width: 400px;
+    margin: 0 auto;
+  }
+  .booking-title {
+    text-align: center;
+    margin-top: 50px;
+    margin-bottom: 50px;
+  }
+  .booking-image {
+    text-align: center;
+    margin-bottom: 30px;
+  }
+  .booking-pic {
+    border-radius: 3px;
+    box-shadow: 3px 3px 5px rgba(0, 0, 0, 0.5);
+  }
+</style>
 
-<%= simple_form_for [@item, @booking] do |f| %>
-  <%= f.input :date %>
-  <%#= f.association :ingredient, as: :select %>
-  <%= f.button :submit %>
-<% end %>
+<div class="booking-title">
+  <h1>Pick a date you want to pick up your <%= @item.name %>!</h1>
+</div>
+<div class="container">
+  <div class="row">
+    <div class="col-md-8 col-sm-offset-2">
+      <div id="booking-form">
+        <div class="booking-image">
+          <%= cl_image_tag @item.photo.path, width: 200, height: 200, crop: :fill, class: "booking-pic" %>
+        </div>
+        <%= simple_form_for [@item, @booking] do |f| %>
+          <div class="form-box">
+            <%= f.input :date, class: "date-input" %>
+            <%#= f.association :ingredient, as: :select %>
+            <%= f.button :submit, class: "btn btn-primary button" %>
+          </div>
+        <% end %>
+      </div>
+    </div>
+  </div>
+</div>
