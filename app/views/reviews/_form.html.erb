@@ -1,0 +1,4 @@
+<%= simple_form_for([ @seller, @review ], url: new_user_review_path(@seller)) do |form| %>
+  <%= form.input :content, as: :text %>
+  <%= form.button :submit %>
+<% end %>
