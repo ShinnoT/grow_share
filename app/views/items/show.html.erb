@@ -8,16 +8,40 @@
           <h3>Quantity: <%= @item.quantity %><%= @item.indicator %></h3>
           <p>Seller: <%= @item.user.first_name %></p>
           <p>Seller mail address: <%= @item.user.email %></p>
-          <p>
-            <%= @item.description %>
-          </p>
-          <%= link_to "Buy", new_item_booking_path(@item) , class: "btn btn-primary" %>
+          <p><%= @item.description %></p>
+
+
+          <div class="message">
+            <img class="avatar-large" src="https://kitt.lewagon.com/placeholder/users/gabriel-dehan">
+            <div class="message-name">
+              <h3>Gab Dehan</h3>
+              <p>10/07/17</p>
+            </div>
+            <div class="message-body">
+              <p><strong>I am not sure yet!</strong></p>
+              <p>
+                I am not sure yet! I might be in Shanghai at this moment... Can I tell you later?
+              </p>
+            </div>
+            <div class="message-status">
+              <p class="status pending">Pending</p>
+              <p class="price">€345</p>
+            </div>
+          </div>
+
+
+          <div class="btn-buy"> <%= link_to "Buy", new_item_booking_path(@item) , class: "btn btn-primary" %>
+          </div>
+          <div class="btn-search">
+           <a><strong><%= link_to "Back to Search", root_path %></strong></a>–
+          </div>
         </div>
-        <a><strong><%= link_to "Back to Search", root_path %></strong></a>
       </div>
+
+
       <div class="col-xs-12 col-md-6">
-        <a></a>
-        <div class="studio-card">
+
+        <div class="studio-image">
           <div>
             <% if @item.photo? %>
               <h1><%= cl_image_tag @item.photo.path, width: 400, height: 400, crop: :fill %></h1>
@@ -29,4 +53,3 @@
       </div>
     </div>
   </div>
-
