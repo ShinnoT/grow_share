@@ -22,7 +22,7 @@ Devise.setup do |config|
   # note that it will be overwritten if you use your own mailer class
   # with default "from" parameter.
 
-  config.mailer_sender = 'neemazandi@gmail.com'
+  config.mailer_sender = ''
 
 
   # Configure the class responsible to send e-mails.
